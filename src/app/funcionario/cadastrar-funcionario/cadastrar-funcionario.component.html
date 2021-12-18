@@ -1,0 +1,18 @@
+<div class="container">
+  <h5 class="card-header">Cadastrar Funcionario</h5>
+  <div class="container">
+    <label class="form-label">Nome </label>
+    <input class="form-control" name="nome" id="nome" [(ngModel)]="funcionario.nome">
+    <label class="form-label">CPF</label>
+    <input class="form-control" name="cpf"id="cpf" [(ngModel)]="funcionario.cpf">
+    <label class="form-label">Departamento</label>
+    <select class="form-control" [(ngModel)]="id">
+      <option *ngFor="let departamento of departamentos" [value]="departamento.id">{{departamento.nome}}</option>
+    </select>
+    <button type="button" class="btn btn-secondary" (click)="cadastrar()">Cadastrar</button>
+
+  </div>
+      {{id}}
+
+</div>
+

@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="card" >
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+      <h1 style="margin-top: 6px;" class="navbar-brand" href="#">Lista de Funcionários</h1>
+      <a class="navbar-brand" href="departamento">Departamento</a>
+      <a class="navbar-brand" href="#">Cargo</a>
+      <button style="margin-left: auto;" class="btn btn-primary" type="submit"  (click)="cadastrar()">Cadastrar</button>
+    </nav>
+    <div class="row">
+      <div class="col-md-4">
+        <input class="form-control " [(ngModel)]="filtro" type="text" placeholder="Nome">
+      </div>
+      <div class="col-sm-2">
+        <button style="margin-left: auto;" class="btn btn-primary" type="submit" (click)="listarPorNome()">Pesquisar</button>
+      </div>
+    </div>
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Cpf</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let funcionario of funcionarios">
+            <td>{{funcionario.id}}</td>
+            <td>{{funcionario.nome}}</td>
+            <td>{{funcionario.cpf}}</td>
+            <button style="margin: 10px;" type="button" class="btn btn-warning btn-sm"(click)="editar(funcionario.id)">EDITAR</button>
+            <button  type="button" class="btn btn-danger btn-sm" (click)="excluir(funcionario.id)">EXCLUIR</button>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

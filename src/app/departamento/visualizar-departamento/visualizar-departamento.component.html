@@ -1,0 +1,29 @@
+<div class="container">
+<div class="card">
+  <div class="card-body">
+  <h1 style="font-size: 1.5rem;">Departamento {{departamento.nome}}</h1>
+  </div>
+</div>
+</div>
+<div class="container">
+  <label class="form-control"><strong>Funcionários</strong></label>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Cpf</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let funcionario of funcionarios">
+      <td>{{funcionario.id}}</td>
+      <td>{{funcionario.nome}}</td>
+      <td>{{funcionario.cpf}}</td>
+      <button  type="button" class="btn btn-danger btn-sm" (click)="excluir(funcionario.id)">EXCLUIR</button>
+    </tr>
+
+  </tbody>
+</table>
+</div>
